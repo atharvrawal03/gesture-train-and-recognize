@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 import cv2
 import mediapipe as mp
 from mediapipe.python.solutions import hands as mp_hands
@@ -8,18 +8,18 @@ import pyautogui, numpy as np, time, subprocess, math, threading, pyttsx3, jobli
 from datetime import datetime
 from collections import deque
 
-# Load model if exists
+
 try:
     model = joblib.load('best_model.pkl')
     scaler = joblib.load('scaler.pkl')
     le = joblib.load('label_encoder.pkl')
     MODEL = True
-    print("✅ Loaded trained model")
+    print("Loaded trained model")
 except:
     MODEL = False
-    print("⚠️ No model – using rule‑based")
+    print(" No model – using rule‑based")
 
-# Settings
+
 SCREEN_W, SCREEN_H = pyautogui.size()
 SMOOTH = 0.2
 HISTORY = 5
@@ -124,7 +124,7 @@ if not cap.isOpened():
     print("Webcam not found.")
     exit(1)
 
-print("🎮 Gesture Control Started. Open palm = cycle modes. Double blink = screenshot. q=quit.")
+print(" Gesture Control Started. Open palm = cycle modes. Double blink = screenshot. q=quit.")
 while True:
     ret, frame = cap.read()
     if not ret: break
