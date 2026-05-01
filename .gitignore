@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+*.pyc
+*.pkl
+gesture_data.pkl
+screenshot_*.png
+*.csv
+*.png
+*.txt
