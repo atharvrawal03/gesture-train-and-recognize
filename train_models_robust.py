@@ -37,19 +37,19 @@ X_test_scaled = scaler.transform(X_test)
 
 # Define models (removed QDA because it fails on high-dim data, add small reg if needed)
 models = {
-    'KNN': KNeighborsClassifier(n_neighbors=5),
+    'KNN': KNeighborsClassifier(n_neighbors=5,random_state=42),
     'LogReg': LogisticRegression(max_iter=1000, solver='lbfgs'),
-    'DecTree': DecisionTreeClassifier(max_depth=10),
-    'RF': RandomForestClassifier(n_estimators=100),
-    'ExtraTrees': ExtraTreesClassifier(n_estimators=100),
-    'GradBoost': GradientBoostingClassifier(n_estimators=100),
-    'AdaBoost': AdaBoostClassifier(n_estimators=100),
+    'DecTree': DecisionTreeClassifier(max_depth=10,random_state=42),
+    'RF': RandomForestClassifier(n_estimators=100,random_state=42),
+    'ExtraTrees': ExtraTreesClassifier(n_estimators=100,random_state=42),
+    'GradBoost': GradientBoostingClassifier(n_estimators=100,random_state=42),
+    'AdaBoost': AdaBoostClassifier(n_estimators=100,random_state=42),
     'SVM_rbf': SVC(probability=True, kernel='rbf'),
     'SVM_lin': SVC(kernel='linear'),
-    'XGB': xgb.XGBClassifier(n_estimators=100, eval_metric='mlogloss', use_label_encoder=False),
-    'LGBM': lgb.LGBMClassifier(n_estimators=100, verbose=-1),
-    'CatBoost': cb.CatBoostClassifier(iterations=100, verbose=0),
-    'MLP': MLPClassifier(hidden_layer_sizes=(64,32), max_iter=500, early_stopping=False),
+    'XGB': xgb.XGBClassifier(n_estimators=100, eval_metric='mlogloss', use_label_encoder=False,random_state=42),
+    'LGBM': lgb.LGBMClassifier(n_estimators=100, verbose=-1,random_state=42),
+    'CatBoost': cb.CatBoostClassifier(iterations=100, verbose=0,random_state=42),
+    'MLP': MLPClassifier(hidden_layer_sizes=(64,32), max_iter=500, early_stopping=False, random_state=42),
     'NB': GaussianNB(),
     'Ridge': RidgeClassifier()
 }
