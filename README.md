@@ -1,12 +1,12 @@
 # Gesture Control with ML
 
-Just a fun AIML lab project – real‑time hand gesture recognition using MediaPipe + 16 ML models.
+Just a fun project – real‑time hand gesture recognition using MediaPipe + 16 ML models.
 
 ## What it does
 - Tracks hand landmarks, normalises them (size & distance invariant)
 - Trains and compares Random Forest, XGBoost, SVM, KNN, etc.
-- Real‑time control: mouse, media, system shortcuts
-- Mode switching, voice feedback, double‑blink screenshot
+- Real‑time control: mouse, media, system shortcuts [mode switching].
+- Mode switching, voice feedback, double‑blink screenshot(will need updates).
 
 ## How to run
 1. `pip install -r requirements.txt`
@@ -16,6 +16,6 @@ Just a fun AIML lab project – real‑time hand gesture recognition using Media
 5. `python3 main.py`
 
 ## Results
-Best model hits ~96% test accuracy (XGBoost).
+Best model hits ~98% test accuracy [fun fact its not xg boost] .
 
-Made by me for the AIML lab.
+Made by me for practice .
